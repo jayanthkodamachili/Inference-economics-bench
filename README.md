@@ -207,13 +207,6 @@ would be more accurate and considerably more expensive, which moves every number
 without changing the argument.
 [ADR-005](docs/adr/ADR-005-what-this-cannot-measure.md) is the full list.
 
-## How this was built
-
-I built this with AI assistance (Claude), working through the design, the experiments and
-the writing in dialogue. The decisions, including the experiment that was renamed when it
-refuted its own title and the finding that was nearly published from noise, are recorded in
-`docs/adr/` as they happened. I am stating this plainly because a repository about honest
-measurement should not be coy about its own provenance.
 
 ## Layout
 
