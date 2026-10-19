@@ -1,0 +1,317 @@
+{
+  "machine": {
+    "python": "3.13.16",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "logical_cores": 2
+  },
+  "experiment": "e4_when_does_it_pay",
+  "question": "How much order dependent signal justifies the expensive model?",
+  "n_docs": 8000,
+  "phrase_rates": [
+    0.0,
+    0.2,
+    0.4,
+    0.6,
+    0.8
+  ],
+  "cheap_model": "logreg_unigram",
+  "rows": [
+    {
+      "phrase_rate": 0.0,
+      "cheap_accuracy": 0.9779,
+      "best_model": "logreg_unigram",
+      "best_accuracy": 0.9779,
+      "gap_points": 0.0,
+      "extra_usd_per_million": 0.0,
+      "points_per_extra_dollar": null,
+      "bigram_accuracy": 0.9779,
+      "transformer_accuracy": 0.9583
+    },
+    {
+      "phrase_rate": 0.2,
+      "cheap_accuracy": 0.8638,
+      "best_model": "svd_boosting",
+      "best_accuracy": 0.9725,
+      "gap_points": 10.88,
+      "extra_usd_per_million": 0.3306,
+      "points_per_extra_dollar": 32.9,
+      "bigram_accuracy": 0.8754,
+      "transformer_accuracy": 0.9471
+    },
+    {
+      "phrase_rate": 0.4,
+      "cheap_accuracy": 0.835,
+      "best_model": "svd_boosting",
+      "best_accuracy": 0.9725,
+      "gap_points": 13.75,
+      "extra_usd_per_million": 0.3549,
+      "points_per_extra_dollar": 38.7,
+      "bigram_accuracy": 0.8788,
+      "transformer_accuracy": 0.9417
+    },
+    {
+      "phrase_rate": 0.6,
+      "cheap_accuracy": 0.9092,
+      "best_model": "svd_boosting",
+      "best_accuracy": 0.9775,
+      "gap_points": 6.83,
+      "extra_usd_per_million": 0.3165,
+      "points_per_extra_dollar": 21.6,
+      "bigram_accuracy": 0.9608,
+      "transformer_accuracy": 0.9504
+    },
+    {
+      "phrase_rate": 0.8,
+      "cheap_accuracy": 0.9479,
+      "best_model": "svd_boosting",
+      "best_accuracy": 0.9767,
+      "gap_points": 2.88,
+      "extra_usd_per_million": 0.2568,
+      "points_per_extra_dollar": 11.2,
+      "bigram_accuracy": 0.9717,
+      "transformer_accuracy": 0.9517
+    }
+  ],
+  "cells": [
+    {
+      "phrase_rate": 0.0,
+      "model": "majority",
+      "accuracy": 0.265,
+      "per_item_ms": 0.0001,
+      "p99_ms": 0.0004,
+      "usd_per_million": 0.0,
+      "size_bytes": 5
+    },
+    {
+      "phrase_rate": 0.0,
+      "model": "logreg_unigram",
+      "accuracy": 0.9779,
+      "per_item_ms": 0.54672,
+      "p99_ms": 0.6451,
+      "usd_per_million": 0.0136,
+      "size_bytes": 75353
+    },
+    {
+      "phrase_rate": 0.0,
+      "model": "logreg_ngram2",
+      "accuracy": 0.9779,
+      "per_item_ms": 0.61626,
+      "p99_ms": 1.3148,
+      "usd_per_million": 0.0153,
+      "size_bytes": 2273031
+    },
+    {
+      "phrase_rate": 0.0,
+      "model": "svd_boosting",
+      "accuracy": 0.9771,
+      "per_item_ms": 14.26711,
+      "p99_ms": 20.8422,
+      "usd_per_million": 0.3537,
+      "size_bytes": 44665017
+    },
+    {
+      "phrase_rate": 0.0,
+      "model": "transformer",
+      "accuracy": 0.9583,
+      "per_item_ms": 0.73409,
+      "p99_ms": 4.8011,
+      "usd_per_million": 0.0182,
+      "size_bytes": 678991
+    },
+    {
+      "phrase_rate": 0.2,
+      "model": "majority",
+      "accuracy": 0.2379,
+      "per_item_ms": 0.00013,
+      "p99_ms": 0.0004,
+      "usd_per_million": 0.0,
+      "size_bytes": 5
+    },
+    {
+      "phrase_rate": 0.2,
+      "model": "logreg_unigram",
+      "accuracy": 0.8638,
+      "per_item_ms": 0.44956,
+      "p99_ms": 0.8243,
+      "usd_per_million": 0.0111,
+      "size_bytes": 75454
+    },
+    {
+      "phrase_rate": 0.2,
+      "model": "logreg_ngram2",
+      "accuracy": 0.8754,
+      "per_item_ms": 0.46489,
+      "p99_ms": 0.5336,
+      "usd_per_million": 0.0115,
+      "size_bytes": 2273977
+    },
+    {
+      "phrase_rate": 0.2,
+      "model": "svd_boosting",
+      "accuracy": 0.9725,
+      "per_item_ms": 13.78634,
+      "p99_ms": 23.8033,
+      "usd_per_million": 0.3418,
+      "size_bytes": 44919910
+    },
+    {
+      "phrase_rate": 0.2,
+      "model": "transformer",
+      "accuracy": 0.9471,
+      "per_item_ms": 0.69355,
+      "p99_ms": 1.3973,
+      "usd_per_million": 0.0172,
+      "size_bytes": 678991
+    },
+    {
+      "phrase_rate": 0.4,
+      "model": "majority",
+      "accuracy": 0.2554,
+      "per_item_ms": 0.00018,
+      "p99_ms": 0.0006,
+      "usd_per_million": 0.0,
+      "size_bytes": 5
+    },
+    {
+      "phrase_rate": 0.4,
+      "model": "logreg_unigram",
+      "accuracy": 0.835,
+      "per_item_ms": 0.5658,
+      "p99_ms": 0.7077,
+      "usd_per_million": 0.014,
+      "size_bytes": 75356
+    },
+    {
+      "phrase_rate": 0.4,
+      "model": "logreg_ngram2",
+      "accuracy": 0.8788,
+      "per_item_ms": 0.56878,
+      "p99_ms": 2.1776,
+      "usd_per_million": 0.0141,
+      "size_bytes": 2254636
+    },
+    {
+      "phrase_rate": 0.4,
+      "model": "svd_boosting",
+      "accuracy": 0.9725,
+      "per_item_ms": 14.88129,
+      "p99_ms": 30.1326,
+      "usd_per_million": 0.3689,
+      "size_bytes": 44575346
+    },
+    {
+      "phrase_rate": 0.4,
+      "model": "transformer",
+      "accuracy": 0.9417,
+      "per_item_ms": 0.76408,
+      "p99_ms": 3.7432,
+      "usd_per_million": 0.0189,
+      "size_bytes": 678991
+    },
+    {
+      "phrase_rate": 0.6,
+      "model": "majority",
+      "accuracy": 0.2583,
+      "per_item_ms": 0.00017,
+      "p99_ms": 0.0005,
+      "usd_per_million": 0.0,
+      "size_bytes": 5
+    },
+    {
+      "phrase_rate": 0.6,
+      "model": "logreg_unigram",
+      "accuracy": 0.9092,
+      "per_item_ms": 0.52046,
+      "p99_ms": 3.2553,
+      "usd_per_million": 0.0129,
+      "size_bytes": 75105
+    },
+    {
+      "phrase_rate": 0.6,
+      "model": "logreg_ngram2",
+      "accuracy": 0.9608,
+      "per_item_ms": 0.43974,
+      "p99_ms": 0.6803,
+      "usd_per_million": 0.0109,
+      "size_bytes": 2251828
+    },
+    {
+      "phrase_rate": 0.6,
+      "model": "svd_boosting",
+      "accuracy": 0.9775,
+      "per_item_ms": 13.28884,
+      "p99_ms": 27.0394,
+      "usd_per_million": 0.3295,
+      "size_bytes": 44420952
+    },
+    {
+      "phrase_rate": 0.6,
+      "model": "transformer",
+      "accuracy": 0.9504,
+      "per_item_ms": 0.80242,
+      "p99_ms": 3.1728,
+      "usd_per_million": 0.0199,
+      "size_bytes": 678991
+    },
+    {
+      "phrase_rate": 0.8,
+      "model": "majority",
+      "accuracy": 0.245,
+      "per_item_ms": 0.00016,
+      "p99_ms": 0.0006,
+      "usd_per_million": 0.0,
+      "size_bytes": 5
+    },
+    {
+      "phrase_rate": 0.8,
+      "model": "logreg_unigram",
+      "accuracy": 0.9479,
+      "per_item_ms": 0.50459,
+      "p99_ms": 2.3099,
+      "usd_per_million": 0.0125,
+      "size_bytes": 75205
+    },
+    {
+      "phrase_rate": 0.8,
+      "model": "logreg_ngram2",
+      "accuracy": 0.9717,
+      "per_item_ms": 0.54669,
+      "p99_ms": 0.9964,
+      "usd_per_million": 0.0136,
+      "size_bytes": 2234387
+    },
+    {
+      "phrase_rate": 0.8,
+      "model": "svd_boosting",
+      "accuracy": 0.9767,
+      "per_item_ms": 10.86228,
+      "p99_ms": 15.1877,
+      "usd_per_million": 0.2693,
+      "size_bytes": 44090391
+    },
+    {
+      "phrase_rate": 0.8,
+      "model": "transformer",
+      "accuracy": 0.9517,
+      "per_item_ms": 0.95795,
+      "p99_ms": 1.2237,
+      "usd_per_million": 0.0237,
+      "size_bytes": 678991
+    }
+  ],
+  "bigram_lift_points": [
+    0.0,
+    1.16,
+    4.38,
+    5.16,
+    2.38
+  ],
+  "bigram_lift_at_zero": 0.0,
+  "bigram_lift_at_max": 2.38,
+  "min_gap_points": 0.0,
+  "max_gap_points": 13.75,
+  "best_models": [
+    "logreg_unigram",
+    "svd_boosting"
+  ]
+}

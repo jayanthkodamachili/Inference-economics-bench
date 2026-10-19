@@ -1,0 +1,278 @@
+{
+  "machine": {
+    "python": "3.13.16",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "logical_cores": 2
+  },
+  "experiment": "e2_does_batching_change_the_answer",
+  "question": "Does the cost ranking survive batching?",
+  "config": {
+    "n_docs": 12000,
+    "vocab_size": 1500,
+    "n_classes": 4,
+    "doc_length": 48,
+    "phrase_rate": 0.35,
+    "label_noise": 0.03,
+    "train_share": 0.7,
+    "models": [
+      "majority",
+      "logreg_unigram",
+      "logreg_ngram2",
+      "svd_boosting",
+      "transformer"
+    ],
+    "batch_sizes": [
+      1,
+      8,
+      64
+    ],
+    "latency_repeats": 120,
+    "latency_warmups": 20,
+    "instance_type": "c7i.large",
+    "seed": 20260219
+  },
+  "price": {
+    "instance_type": "c7i.large",
+    "usd_per_hour": 0.08925,
+    "source": "snapshot",
+    "as_of": "2026-02-19"
+  },
+  "batches": [
+    1,
+    8,
+    64
+  ],
+  "cells": [
+    {
+      "batch_size": 1,
+      "model": "majority",
+      "accuracy": 0.2433,
+      "per_item_ms": 0.0001,
+      "p99_ms": 0.0004,
+      "usd_per_million": 0.0,
+      "size_bytes": 5
+    },
+    {
+      "batch_size": 1,
+      "model": "logreg_unigram",
+      "accuracy": 0.885,
+      "per_item_ms": 0.47385,
+      "p99_ms": 0.7221,
+      "usd_per_million": 0.0117,
+      "size_bytes": 75754
+    },
+    {
+      "batch_size": 1,
+      "model": "logreg_ngram2",
+      "accuracy": 0.9028,
+      "per_item_ms": 0.50912,
+      "p99_ms": 0.8111,
+      "usd_per_million": 0.0126,
+      "size_bytes": 3974318
+    },
+    {
+      "batch_size": 1,
+      "model": "svd_boosting",
+      "accuracy": 0.9769,
+      "per_item_ms": 28.45344,
+      "p99_ms": 60.5112,
+      "usd_per_million": 0.7054,
+      "size_bytes": 76966829
+    },
+    {
+      "batch_size": 1,
+      "model": "transformer",
+      "accuracy": 0.9542,
+      "per_item_ms": 0.8685,
+      "p99_ms": 2.5938,
+      "usd_per_million": 0.0215,
+      "size_bytes": 678991
+    },
+    {
+      "batch_size": 8,
+      "model": "majority",
+      "accuracy": 0.2433,
+      "per_item_ms": 0.00014,
+      "p99_ms": 0.0015,
+      "usd_per_million": 0.0,
+      "size_bytes": 5
+    },
+    {
+      "batch_size": 8,
+      "model": "logreg_unigram",
+      "accuracy": 0.885,
+      "per_item_ms": 0.08537,
+      "p99_ms": 0.8855,
+      "usd_per_million": 0.0021,
+      "size_bytes": 75754
+    },
+    {
+      "batch_size": 8,
+      "model": "logreg_ngram2",
+      "accuracy": 0.9028,
+      "per_item_ms": 0.11383,
+      "p99_ms": 1.068,
+      "usd_per_million": 0.0028,
+      "size_bytes": 3974318
+    },
+    {
+      "batch_size": 8,
+      "model": "svd_boosting",
+      "accuracy": 0.9769,
+      "per_item_ms": 3.29268,
+      "p99_ms": 45.9181,
+      "usd_per_million": 0.0816,
+      "size_bytes": 76966829
+    },
+    {
+      "batch_size": 8,
+      "model": "transformer",
+      "accuracy": 0.9542,
+      "per_item_ms": 0.38385,
+      "p99_ms": 6.2243,
+      "usd_per_million": 0.0095,
+      "size_bytes": 678991
+    },
+    {
+      "batch_size": 64,
+      "model": "majority",
+      "accuracy": 0.2433,
+      "per_item_ms": 2e-05,
+      "p99_ms": 0.0021,
+      "usd_per_million": 0.0,
+      "size_bytes": 5
+    },
+    {
+      "batch_size": 64,
+      "model": "logreg_unigram",
+      "accuracy": 0.885,
+      "per_item_ms": 0.03151,
+      "p99_ms": 2.5845,
+      "usd_per_million": 0.0008,
+      "size_bytes": 75754
+    },
+    {
+      "batch_size": 64,
+      "model": "logreg_ngram2",
+      "accuracy": 0.9028,
+      "per_item_ms": 0.05391,
+      "p99_ms": 7.3227,
+      "usd_per_million": 0.0013,
+      "size_bytes": 3974318
+    },
+    {
+      "batch_size": 64,
+      "model": "svd_boosting",
+      "accuracy": 0.9769,
+      "per_item_ms": 0.50865,
+      "p99_ms": 42.5546,
+      "usd_per_million": 0.0126,
+      "size_bytes": 76966829
+    },
+    {
+      "batch_size": 64,
+      "model": "transformer",
+      "accuracy": 0.9542,
+      "per_item_ms": 0.19182,
+      "p99_ms": 23.4993,
+      "usd_per_million": 0.0048,
+      "size_bytes": 678991
+    }
+  ],
+  "savings": {
+    "majority": 5.8,
+    "logreg_unigram": 15.0,
+    "logreg_ngram2": 9.4,
+    "svd_boosting": 55.9,
+    "transformer": 4.5
+  },
+  "orderings": {
+    "1": [
+      [
+        "majority"
+      ],
+      [
+        "logreg_ngram2",
+        "logreg_unigram"
+      ],
+      [
+        "transformer"
+      ],
+      [
+        "svd_boosting"
+      ]
+    ],
+    "8": [
+      [
+        "majority"
+      ],
+      [
+        "logreg_unigram"
+      ],
+      [
+        "logreg_ngram2"
+      ],
+      [
+        "transformer"
+      ],
+      [
+        "svd_boosting"
+      ]
+    ],
+    "64": [
+      [
+        "majority"
+      ],
+      [
+        "logreg_unigram"
+      ],
+      [
+        "logreg_ngram2"
+      ],
+      [
+        "transformer"
+      ],
+      [
+        "svd_boosting"
+      ]
+    ]
+  },
+  "distinct_orderings": 2,
+  "precision_repeats": 5,
+  "measurement_spreads": {
+    "majority": 1.118,
+    "logreg_unigram": 1.165,
+    "logreg_ngram2": 1.035,
+    "svd_boosting": 1.066,
+    "transformer": 1.172
+  },
+  "tie_tolerance": 1.172,
+  "reversed_pairs": [],
+  "reversal_count": 0,
+  "premium_at_batch_1": 60.0,
+  "premium_at_largest_batch": 16.1,
+  "largest_batch": 64,
+  "frontier_by_batch": {
+    "1": [
+      "majority",
+      "logreg_unigram",
+      "logreg_ngram2",
+      "transformer",
+      "svd_boosting"
+    ],
+    "8": [
+      "majority",
+      "logreg_unigram",
+      "logreg_ngram2",
+      "transformer",
+      "svd_boosting"
+    ],
+    "64": [
+      "majority",
+      "logreg_unigram",
+      "logreg_ngram2",
+      "transformer",
+      "svd_boosting"
+    ]
+  }
+}

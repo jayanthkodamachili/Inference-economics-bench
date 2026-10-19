@@ -1,0 +1,95 @@
+{
+  "machine": {
+    "python": "3.13.16",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "logical_cores": 2
+  },
+  "experiment": "e3_the_budget_decides",
+  "question": "Does one model win, or does the budget pick a different one?",
+  "source": "e1_the_frontier",
+  "price": {
+    "instance_type": "c7i.large",
+    "usd_per_hour": 0.08925,
+    "source": "snapshot",
+    "as_of": "2026-02-19"
+  },
+  "budgets": [
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.2,
+    1.0
+  ],
+  "slas_ms": [
+    0.5,
+    1.0,
+    3.0,
+    10.0,
+    100.0
+  ],
+  "by_budget": {
+    "0.005": "majority",
+    "0.01": "logreg_unigram",
+    "0.02": "transformer",
+    "0.05": "transformer",
+    "0.2": "transformer",
+    "1.0": "svd_boosting"
+  },
+  "by_sla": {
+    "0.5": "majority",
+    "1.0": "logreg_ngram2",
+    "3.0": "transformer",
+    "10.0": "transformer",
+    "100.0": "svd_boosting"
+  },
+  "distinct_models_by_budget": 4,
+  "distinct_models_by_sla": 4,
+  "disagreeing_pairs": 22,
+  "total_pairs": 30,
+  "upgrades": [
+    {
+      "from": "majority",
+      "to": "logreg_unigram",
+      "points_gained": 64.17,
+      "extra_usd_per_million": 0.0092,
+      "points_per_extra_dollar": 6975.0
+    },
+    {
+      "from": "logreg_unigram",
+      "to": "logreg_ngram2",
+      "points_gained": 1.78,
+      "extra_usd_per_million": 0.0044,
+      "points_per_extra_dollar": 404.55
+    },
+    {
+      "from": "logreg_ngram2",
+      "to": "transformer",
+      "points_gained": 5.14,
+      "extra_usd_per_million": 0.0018,
+      "points_per_extra_dollar": 2855.56
+    },
+    {
+      "from": "transformer",
+      "to": "svd_boosting",
+      "points_gained": 2.27,
+      "extra_usd_per_million": 0.5023,
+      "points_per_extra_dollar": 4.52
+    }
+  ],
+  "best_value_step": {
+    "from": "majority",
+    "to": "logreg_unigram",
+    "points_gained": 64.17,
+    "extra_usd_per_million": 0.0092,
+    "points_per_extra_dollar": 6975.0
+  },
+  "worst_value_step": {
+    "from": "transformer",
+    "to": "svd_boosting",
+    "points_gained": 2.27,
+    "extra_usd_per_million": 0.5023,
+    "points_per_extra_dollar": 4.52
+  },
+  "value_ratio": 1543.0
+}

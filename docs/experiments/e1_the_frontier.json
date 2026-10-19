@@ -1,0 +1,191 @@
+{
+  "machine": {
+    "python": "3.13.16",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "logical_cores": 2
+  },
+  "experiment": "e1_the_frontier",
+  "question": "Do accuracy and cost rank these models the same way?",
+  "config": {
+    "n_docs": 12000,
+    "vocab_size": 1500,
+    "n_classes": 4,
+    "doc_length": 48,
+    "phrase_rate": 0.35,
+    "label_noise": 0.03,
+    "train_share": 0.7,
+    "models": [
+      "majority",
+      "logreg_unigram",
+      "logreg_ngram2",
+      "svd_boosting",
+      "transformer"
+    ],
+    "batch_sizes": [
+      1
+    ],
+    "latency_repeats": 200,
+    "latency_warmups": 20,
+    "instance_type": "c7i.large",
+    "seed": 20260219
+  },
+  "price": {
+    "instance_type": "c7i.large",
+    "usd_per_hour": 0.08925,
+    "source": "snapshot",
+    "as_of": "2026-02-19"
+  },
+  "points": [
+    {
+      "model": "majority",
+      "accuracy": 0.2433,
+      "per_item_ms": 8e-05,
+      "p99_ms": 0.0003,
+      "usd_per_million": 0.0,
+      "size_bytes": 5
+    },
+    {
+      "model": "logreg_unigram",
+      "accuracy": 0.885,
+      "per_item_ms": 0.37125,
+      "p99_ms": 0.7329,
+      "usd_per_million": 0.0092,
+      "size_bytes": 75754
+    },
+    {
+      "model": "logreg_ngram2",
+      "accuracy": 0.9028,
+      "per_item_ms": 0.55042,
+      "p99_ms": 0.7882,
+      "usd_per_million": 0.0136,
+      "size_bytes": 3974318
+    },
+    {
+      "model": "svd_boosting",
+      "accuracy": 0.9769,
+      "per_item_ms": 20.88042,
+      "p99_ms": 30.5521,
+      "usd_per_million": 0.5177,
+      "size_bytes": 76966829
+    },
+    {
+      "model": "transformer",
+      "accuracy": 0.9542,
+      "per_item_ms": 0.62113,
+      "p99_ms": 2.6035,
+      "usd_per_million": 0.0154,
+      "size_bytes": 678991
+    }
+  ],
+  "results": [
+    {
+      "model": "majority",
+      "accuracy": 0.2433,
+      "train_seconds": 0.0,
+      "size_bytes": 5,
+      "profiles": {
+        "1": {
+          "model": "majority",
+          "batch_size": 1,
+          "samples": 200,
+          "p50_ms": 0.0001,
+          "p95_ms": 0.0001,
+          "p99_ms": 0.0003,
+          "mean_ms": 0.0001,
+          "per_item_ms": 8e-05,
+          "items_per_second": 12345740.3
+        }
+      }
+    },
+    {
+      "model": "logreg_unigram",
+      "accuracy": 0.885,
+      "train_seconds": 0.334,
+      "size_bytes": 75754,
+      "profiles": {
+        "1": {
+          "model": "logreg_unigram",
+          "batch_size": 1,
+          "samples": 200,
+          "p50_ms": 0.3712,
+          "p95_ms": 0.4378,
+          "p99_ms": 0.7329,
+          "mean_ms": 0.3846,
+          "per_item_ms": 0.37125,
+          "items_per_second": 2693.6
+        }
+      }
+    },
+    {
+      "model": "logreg_ngram2",
+      "accuracy": 0.9028,
+      "train_seconds": 2.315,
+      "size_bytes": 3974318,
+      "profiles": {
+        "1": {
+          "model": "logreg_ngram2",
+          "batch_size": 1,
+          "samples": 200,
+          "p50_ms": 0.5504,
+          "p95_ms": 0.6949,
+          "p99_ms": 0.7882,
+          "mean_ms": 0.57,
+          "per_item_ms": 0.55042,
+          "items_per_second": 1816.8
+        }
+      }
+    },
+    {
+      "model": "svd_boosting",
+      "accuracy": 0.9769,
+      "train_seconds": 9.764,
+      "size_bytes": 76966829,
+      "profiles": {
+        "1": {
+          "model": "svd_boosting",
+          "batch_size": 1,
+          "samples": 200,
+          "p50_ms": 20.8804,
+          "p95_ms": 26.399,
+          "p99_ms": 30.5521,
+          "mean_ms": 21.4546,
+          "per_item_ms": 20.88042,
+          "items_per_second": 47.9
+        }
+      }
+    },
+    {
+      "model": "transformer",
+      "accuracy": 0.9542,
+      "train_seconds": 65.983,
+      "size_bytes": 678991,
+      "profiles": {
+        "1": {
+          "model": "transformer",
+          "batch_size": 1,
+          "samples": 200,
+          "p50_ms": 0.6211,
+          "p95_ms": 1.0649,
+          "p99_ms": 2.6035,
+          "mean_ms": 0.7119,
+          "per_item_ms": 0.62113,
+          "items_per_second": 1610.0
+        }
+      }
+    }
+  ],
+  "frontier": [
+    "majority",
+    "logreg_unigram",
+    "logreg_ngram2",
+    "transformer",
+    "svd_boosting"
+  ],
+  "dominated": [],
+  "most_accurate": "svd_boosting",
+  "most_accurate_accuracy": 0.9769,
+  "cheapest_useful": "logreg_unigram",
+  "cheapest_useful_accuracy": 0.885,
+  "accuracy_points_gained": 9.19,
+  "cost_multiple": 56.2
+}
