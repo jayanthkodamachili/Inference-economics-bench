@@ -1,0 +1,536 @@
+{
+  "metrics": {
+    "tests_total": 71,
+    "coverage_line_pct": 100,
+    "price_usd_per_hour": 0.08925,
+    "most_accurate_accuracy": 0.9769,
+    "transformer_accuracy": 0.9542,
+    "accuracy_points_gained": 9.19,
+    "cost_multiple": 56.2,
+    "boosting_over_transformer_points": 2.27,
+    "boosting_over_transformer_cost": 33.6,
+    "boosting_size_mb": 73.0,
+    "transformer_size_kb": 663.0,
+    "premium_at_batch_1": 60.0,
+    "premium_at_largest_batch": 16.1,
+    "tie_tolerance": 1.172,
+    "reversal_count": 0,
+    "boosting_batch_saving": 55.9,
+    "transformer_batch_saving": 4.5,
+    "distinct_models_by_budget": 4,
+    "disagreeing_pairs": 22,
+    "total_pairs": 30,
+    "best_value_points_per_dollar": 6975.0,
+    "worst_value_points_per_dollar": 4.52,
+    "value_ratio": 1543,
+    "bigram_lift_at_zero": 0.0,
+    "bigram_lift_at_max": 2.38,
+    "min_gap_points": 0.0,
+    "max_gap_points": 13.75,
+    "e4_zero_unigram": 0.9779,
+    "e4_zero_transformer": 0.9583,
+    "e1_majority_accuracy": 0.2433,
+    "e1_majority_cost": 0.0,
+    "e1_majority_p99": 0.0,
+    "e1_logreg_unigram_accuracy": 0.885,
+    "e1_logreg_unigram_cost": 0.0092,
+    "e1_logreg_unigram_p99": 0.733,
+    "e1_logreg_ngram2_accuracy": 0.9028,
+    "e1_logreg_ngram2_cost": 0.0136,
+    "e1_logreg_ngram2_p99": 0.788,
+    "e1_svd_boosting_accuracy": 0.9769,
+    "e1_svd_boosting_cost": 0.5177,
+    "e1_svd_boosting_p99": 30.552,
+    "e1_transformer_accuracy": 0.9542,
+    "e1_transformer_cost": 0.0154,
+    "e1_transformer_p99": 2.603,
+    "e2_majority_1": 0.0,
+    "e2_logreg_unigram_1": 0.0117,
+    "e2_logreg_ngram2_1": 0.0126,
+    "e2_svd_boosting_1": 0.7054,
+    "e2_transformer_1": 0.0215,
+    "e2_majority_8": 0.0,
+    "e2_logreg_unigram_8": 0.0021,
+    "e2_logreg_ngram2_8": 0.0028,
+    "e2_svd_boosting_8": 0.0816,
+    "e2_transformer_8": 0.0095,
+    "e2_majority_64": 0.0,
+    "e2_logreg_unigram_64": 0.0008,
+    "e2_logreg_ngram2_64": 0.0013,
+    "e2_svd_boosting_64": 0.0126,
+    "e2_transformer_64": 0.0048,
+    "e3_budget_label_0005": 0.005,
+    "e3_budget_label_001": 0.01,
+    "e3_budget_label_002": 0.02,
+    "e3_budget_label_005": 0.05,
+    "e3_budget_label_02": 0.2,
+    "e3_budget_label_10": 1.0,
+    "e4_rate_label_00": 0.0,
+    "e4_rate_label_02": 0.2,
+    "e4_rate_label_04": 0.4,
+    "e4_rate_label_06": 0.6,
+    "e4_rate_label_08": 0.8,
+    "e3_budget_0005": "majority",
+    "e3_budget_001": "logreg_unigram",
+    "e3_budget_002": "transformer",
+    "e3_budget_005": "transformer",
+    "e3_budget_02": "transformer",
+    "e3_budget_10": "svd_boosting",
+    "e3_step_majority_logreg_unigram": 6975.0,
+    "e3_step_logreg_unigram_logreg_ngram2": 404.55,
+    "e3_step_logreg_ngram2_transformer": 2855.56,
+    "e3_step_transformer_svd_boosting": 4.52,
+    "e4_00_unigram": 0.9779,
+    "e4_00_bigram": 0.9779,
+    "e4_00_transformer": 0.9583,
+    "e4_00_gap": 0.0,
+    "e4_02_unigram": 0.8638,
+    "e4_02_bigram": 0.8754,
+    "e4_02_transformer": 0.9471,
+    "e4_02_gap": 10.88,
+    "e4_04_unigram": 0.835,
+    "e4_04_bigram": 0.8788,
+    "e4_04_transformer": 0.9417,
+    "e4_04_gap": 13.75,
+    "e4_06_unigram": 0.9092,
+    "e4_06_bigram": 0.9608,
+    "e4_06_transformer": 0.9504,
+    "e4_06_gap": 6.83,
+    "e4_08_unigram": 0.9479,
+    "e4_08_bigram": 0.9717,
+    "e4_08_transformer": 0.9517,
+    "e4_08_gap": 2.88
+  },
+  "display": {
+    "tests_total": "71",
+    "coverage_line_pct": "100",
+    "price_usd_per_hour": "0.08925",
+    "most_accurate_accuracy": "0.9769",
+    "transformer_accuracy": "0.9542",
+    "accuracy_points_gained": "9.19",
+    "cost_multiple": "56.2",
+    "boosting_over_transformer_points": "2.27",
+    "boosting_over_transformer_cost": "33.6",
+    "boosting_size_mb": "73",
+    "transformer_size_kb": "663",
+    "premium_at_batch_1": "60.0",
+    "premium_at_largest_batch": "16.1",
+    "tie_tolerance": "1.17",
+    "reversal_count": "0",
+    "boosting_batch_saving": "55.9",
+    "transformer_batch_saving": "4.5",
+    "distinct_models_by_budget": "4",
+    "disagreeing_pairs": "22",
+    "total_pairs": "30",
+    "best_value_points_per_dollar": "6975.0",
+    "worst_value_points_per_dollar": "4.5",
+    "value_ratio": "1543",
+    "bigram_lift_at_zero": "0.00",
+    "bigram_lift_at_max": "2.38",
+    "min_gap_points": "0.00",
+    "max_gap_points": "13.75",
+    "e4_zero_unigram": "0.9779",
+    "e4_zero_transformer": "0.9583",
+    "e1_majority_accuracy": "0.2433",
+    "e1_majority_cost": "0.0000",
+    "e1_majority_p99": "0.000",
+    "e1_logreg_unigram_accuracy": "0.8850",
+    "e1_logreg_unigram_cost": "0.0092",
+    "e1_logreg_unigram_p99": "0.733",
+    "e1_logreg_ngram2_accuracy": "0.9028",
+    "e1_logreg_ngram2_cost": "0.0136",
+    "e1_logreg_ngram2_p99": "0.788",
+    "e1_svd_boosting_accuracy": "0.9769",
+    "e1_svd_boosting_cost": "0.5177",
+    "e1_svd_boosting_p99": "30.552",
+    "e1_transformer_accuracy": "0.9542",
+    "e1_transformer_cost": "0.0154",
+    "e1_transformer_p99": "2.603",
+    "e2_majority_1": "0.0000",
+    "e2_logreg_unigram_1": "0.0117",
+    "e2_logreg_ngram2_1": "0.0126",
+    "e2_svd_boosting_1": "0.7054",
+    "e2_transformer_1": "0.0215",
+    "e2_majority_8": "0.0000",
+    "e2_logreg_unigram_8": "0.0021",
+    "e2_logreg_ngram2_8": "0.0028",
+    "e2_svd_boosting_8": "0.0816",
+    "e2_transformer_8": "0.0095",
+    "e2_majority_64": "0.0000",
+    "e2_logreg_unigram_64": "0.0008",
+    "e2_logreg_ngram2_64": "0.0013",
+    "e2_svd_boosting_64": "0.0126",
+    "e2_transformer_64": "0.0048",
+    "e3_budget_label_0005": "0.005",
+    "e3_budget_label_001": "0.01",
+    "e3_budget_label_002": "0.02",
+    "e3_budget_label_005": "0.05",
+    "e3_budget_label_02": "0.2",
+    "e3_budget_label_10": "1",
+    "e4_rate_label_00": "0.0",
+    "e4_rate_label_02": "0.2",
+    "e4_rate_label_04": "0.4",
+    "e4_rate_label_06": "0.6",
+    "e4_rate_label_08": "0.8",
+    "e3_budget_0005": "majority",
+    "e3_budget_001": "logreg_unigram",
+    "e3_budget_002": "transformer",
+    "e3_budget_005": "transformer",
+    "e3_budget_02": "transformer",
+    "e3_budget_10": "svd_boosting",
+    "e3_step_majority_logreg_unigram": "6975.0",
+    "e3_step_logreg_unigram_logreg_ngram2": "404.6",
+    "e3_step_logreg_ngram2_transformer": "2855.6",
+    "e3_step_transformer_svd_boosting": "4.5",
+    "e4_00_unigram": "0.9779",
+    "e4_00_bigram": "0.9779",
+    "e4_00_transformer": "0.9583",
+    "e4_00_gap": "0.00",
+    "e4_02_unigram": "0.8638",
+    "e4_02_bigram": "0.8754",
+    "e4_02_transformer": "0.9471",
+    "e4_02_gap": "10.88",
+    "e4_04_unigram": "0.8350",
+    "e4_04_bigram": "0.8788",
+    "e4_04_transformer": "0.9417",
+    "e4_04_gap": "13.75",
+    "e4_06_unigram": "0.9092",
+    "e4_06_bigram": "0.9608",
+    "e4_06_transformer": "0.9504",
+    "e4_06_gap": "6.83",
+    "e4_08_unigram": "0.9479",
+    "e4_08_bigram": "0.9717",
+    "e4_08_transformer": "0.9517",
+    "e4_08_gap": "2.88"
+  },
+  "anchors": {
+    "tests_total": [
+      "{} tests"
+    ],
+    "coverage_line_pct": [
+      "{} percent line coverage"
+    ],
+    "most_accurate_accuracy": [
+      "| {} |"
+    ],
+    "transformer_accuracy": [
+      "| {} |"
+    ],
+    "accuracy_points_gained": [
+      "{} accuracy points",
+      "gap is {} points"
+    ],
+    "cost_multiple": [
+      "{} times the price",
+      "{} times more"
+    ],
+    "boosting_over_transformer_points": [
+      "by {} accuracy points",
+      "{} points more"
+    ],
+    "boosting_over_transformer_cost": [
+      "{} times as much per call",
+      "{} times the cost"
+    ],
+    "boosting_size_mb": [
+      "{} mb artifact",
+      "{} mb model"
+    ],
+    "transformer_size_kb": [
+      "{} kb",
+      "against {} kb"
+    ],
+    "premium_at_batch_1": [
+      "{}x at batch 1",
+      "from {}x"
+    ],
+    "premium_at_largest_batch": [
+      "to {}x at batch 64",
+      "{}x at batch 64"
+    ],
+    "tie_tolerance": [
+      "resolve better than {}",
+      "within {}"
+    ],
+    "reversal_count": [
+      "{} pairs reverse",
+      "exactly {} pair"
+    ],
+    "boosting_batch_saving": [
+      "{} times cheaper",
+      "{}x cheaper when batched"
+    ],
+    "transformer_batch_saving": [
+      "only {} times",
+      "{}x for the transformer"
+    ],
+    "distinct_models_by_budget": [
+      "{} different models"
+    ],
+    "disagreeing_pairs": [
+      "{} of them",
+      "{} select"
+    ],
+    "total_pairs": [
+      "{} budget and latency pairs",
+      "all {} pairs"
+    ],
+    "best_value_points_per_dollar": [
+      "{} accuracy points per extra dollar"
+    ],
+    "worst_value_points_per_dollar": [
+      "down to {}",
+      "is {} points"
+    ],
+    "value_ratio": [
+      "ratio of {}",
+      "{} between"
+    ],
+    "bigram_lift_at_zero": [
+      "gains {} accuracy points",
+      "exactly {} points"
+    ],
+    "bigram_lift_at_max": [
+      "gains {} points",
+      "to {} points"
+    ],
+    "min_gap_points": [
+      "from {} points",
+      "as little as {}"
+    ],
+    "max_gap_points": [
+      "to {} points",
+      "as much as {}"
+    ],
+    "e4_zero_unigram": [
+      "unigram reaches {}",
+      "{} at phrase rate zero"
+    ],
+    "e4_zero_transformer": [
+      "transformer manages {}",
+      "only {}"
+    ],
+    "price_usd_per_hour": [
+      "${} an hour",
+      "at ${}"
+    ],
+    "e1_majority_accuracy": [
+      "| {} |"
+    ],
+    "e1_majority_cost": [
+      "| {} |"
+    ],
+    "e1_majority_p99": [
+      "| {} |"
+    ],
+    "e1_logreg_unigram_accuracy": [
+      "| {} |"
+    ],
+    "e1_logreg_unigram_cost": [
+      "| {} |"
+    ],
+    "e1_logreg_unigram_p99": [
+      "| {} |"
+    ],
+    "e1_logreg_ngram2_accuracy": [
+      "| {} |"
+    ],
+    "e1_logreg_ngram2_cost": [
+      "| {} |"
+    ],
+    "e1_logreg_ngram2_p99": [
+      "| {} |"
+    ],
+    "e1_svd_boosting_accuracy": [
+      "| {} |"
+    ],
+    "e1_svd_boosting_cost": [
+      "| {} |"
+    ],
+    "e1_svd_boosting_p99": [
+      "| {} |"
+    ],
+    "e1_transformer_accuracy": [
+      "| {} |"
+    ],
+    "e1_transformer_cost": [
+      "| {} |"
+    ],
+    "e1_transformer_p99": [
+      "| {} |"
+    ],
+    "e2_majority_1": [
+      "| {} |"
+    ],
+    "e2_logreg_unigram_1": [
+      "| {} |"
+    ],
+    "e2_logreg_ngram2_1": [
+      "| {} |"
+    ],
+    "e2_svd_boosting_1": [
+      "| {} |"
+    ],
+    "e2_transformer_1": [
+      "| {} |"
+    ],
+    "e2_majority_8": [
+      "| {} |"
+    ],
+    "e2_logreg_unigram_8": [
+      "| {} |"
+    ],
+    "e2_logreg_ngram2_8": [
+      "| {} |"
+    ],
+    "e2_svd_boosting_8": [
+      "| {} |"
+    ],
+    "e2_transformer_8": [
+      "| {} |"
+    ],
+    "e2_majority_64": [
+      "| {} |"
+    ],
+    "e2_logreg_unigram_64": [
+      "| {} |"
+    ],
+    "e2_logreg_ngram2_64": [
+      "| {} |"
+    ],
+    "e2_svd_boosting_64": [
+      "| {} |"
+    ],
+    "e2_transformer_64": [
+      "| {} |"
+    ],
+    "e3_budget_label_0005": [
+      "| {} |"
+    ],
+    "e3_budget_label_001": [
+      "| {} |"
+    ],
+    "e3_budget_label_002": [
+      "| {} |"
+    ],
+    "e3_budget_label_005": [
+      "| {} |"
+    ],
+    "e3_budget_label_02": [
+      "| {} |"
+    ],
+    "e3_budget_label_10": [
+      "| {} |"
+    ],
+    "e4_rate_label_00": [
+      "| {} |"
+    ],
+    "e4_rate_label_02": [
+      "| {} |"
+    ],
+    "e4_rate_label_04": [
+      "| {} |"
+    ],
+    "e4_rate_label_06": [
+      "| {} |"
+    ],
+    "e4_rate_label_08": [
+      "| {} |"
+    ],
+    "e3_budget_0005": [
+      "| {} |"
+    ],
+    "e3_budget_001": [
+      "| {} |"
+    ],
+    "e3_budget_002": [
+      "| {} |"
+    ],
+    "e3_budget_005": [
+      "| {} |"
+    ],
+    "e3_budget_02": [
+      "| {} |"
+    ],
+    "e3_budget_10": [
+      "| {} |"
+    ],
+    "e3_step_majority_logreg_unigram": [
+      "| {} |"
+    ],
+    "e3_step_logreg_unigram_logreg_ngram2": [
+      "| {} |"
+    ],
+    "e3_step_logreg_ngram2_transformer": [
+      "| {} |"
+    ],
+    "e3_step_transformer_svd_boosting": [
+      "| {} |"
+    ],
+    "e4_00_unigram": [
+      "| {} |"
+    ],
+    "e4_00_bigram": [
+      "| {} |"
+    ],
+    "e4_00_transformer": [
+      "| {} |"
+    ],
+    "e4_00_gap": [
+      "| {} |"
+    ],
+    "e4_02_unigram": [
+      "| {} |"
+    ],
+    "e4_02_bigram": [
+      "| {} |"
+    ],
+    "e4_02_transformer": [
+      "| {} |"
+    ],
+    "e4_02_gap": [
+      "| {} |"
+    ],
+    "e4_04_unigram": [
+      "| {} |"
+    ],
+    "e4_04_bigram": [
+      "| {} |"
+    ],
+    "e4_04_transformer": [
+      "| {} |"
+    ],
+    "e4_04_gap": [
+      "| {} |"
+    ],
+    "e4_06_unigram": [
+      "| {} |"
+    ],
+    "e4_06_bigram": [
+      "| {} |"
+    ],
+    "e4_06_transformer": [
+      "| {} |"
+    ],
+    "e4_06_gap": [
+      "| {} |"
+    ],
+    "e4_08_unigram": [
+      "| {} |"
+    ],
+    "e4_08_bigram": [
+      "| {} |"
+    ],
+    "e4_08_transformer": [
+      "| {} |"
+    ],
+    "e4_08_gap": [
+      "| {} |"
+    ]
+  },
+  "checked_documents": [
+    "README.md",
+    "docs/adr/ADR-005-what-this-cannot-measure.md"
+  ],
+  "note": "accuracies are re-measured by tools/check_reproducible.py; timings are read from the recorded run, because rerunning them changes them"
+}

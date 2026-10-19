@@ -1,0 +1,43 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b  # v5.3.0
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Lint
+        run: python -m ruff check .
+
+      # junit.xml and coverage.json are written here because the figure check reads them
+      # rather than running the suite a second time.
+      - name: Tests
+        run: |
+          python -m pytest --junitxml=junit.xml --cov=inference_economics \
+            --cov-report=term-missing --cov-report=json --cov-fail-under=100
+
+      # Accuracy is deterministic, so the recorded accuracies are re-derived here and must
+      # still hold exactly. Latency is not, and is read from the recorded run instead: a
+      # check that re-measures a noisy quantity and demands it match fails at random, and
+      # a CI runner is noisier than a laptop. See ADR-003.
+      - name: Recorded accuracies still reproduce
+        run: python tools/check_reproducible.py
+
+      - name: Figures match the recorded run
+        run: |
+          python tools/collect_metrics.py --skip-tests
+          python tools/check_numbers.py
