@@ -1,0 +1,21 @@
+{
+  "note": "each command was run by tools/capture_cli.py, exit codes as returned",
+  "runs": [
+    {
+      "command": "inference-economics --choose svd_boosting --n-docs 2500 --latency-repeats 50",
+      "exit_code": 0
+    },
+    {
+      "command": "inference-economics --choose transformer --n-docs 2500 --latency-repeats 50",
+      "exit_code": 4
+    },
+    {
+      "command": "inference-economics --choose transformer --n-docs 2500 --latency-repeats 50 --p99-budget-ms 0.00001",
+      "exit_code": 5
+    },
+    {
+      "command": "inference-economics --n-docs 50",
+      "exit_code": 2
+    }
+  ]
+}
