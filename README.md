@@ -197,7 +197,7 @@ that fails at random is one everybody learns to ignore.
 
 Both kinds are registered in `docs/metrics.json` with anchor phrases and checked in both
 directions: every metric must appear in the prose through its anchor, and every decimal in
-the prose must correspond to a metric. The suite is 71 tests at 100 percent line coverage.
+the prose must correspond to a metric. The suite is 72 tests at 100 percent line coverage.
 
 ## What this cannot measure
 
@@ -220,7 +220,7 @@ measurement should not be coy about its own provenance.
 ```
 src/inference_economics/  corpus, models, latency, pricing, economics, report, cli
 experiments/              the four experiments, writing JSON to docs/experiments/
-tests/                    71 tests
+tests/                    72 tests
 tools/                    metric collection, the number checker, the reproducibility check
 docs/adr/                 five decision records
 ```

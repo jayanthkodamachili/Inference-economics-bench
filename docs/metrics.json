@@ -1,6 +1,6 @@
 {
   "metrics": {
-    "tests_total": 71,
+    "tests_total": 72,
     "coverage_line_pct": 100,
     "price_usd_per_hour": 0.08925,
     "most_accurate_accuracy": 0.9769,
@@ -102,7 +102,7 @@
     "e4_08_gap": 2.88
   },
   "display": {
-    "tests_total": "71",
+    "tests_total": "72",
     "coverage_line_pct": "100",
     "price_usd_per_hour": "0.08925",
     "most_accurate_accuracy": "0.9769",

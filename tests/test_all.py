@@ -528,8 +528,33 @@ class TestRenderingTheSlaVerdict:
         assert payload["model"] == "m" and "usd_per_million" in payload
         json.dumps(payload)
 
-    def test_live_pricing_without_credentials_falls_back_rather_than_crashing(self):
+    def test_a_client_that_cannot_be_constructed_falls_back(self, monkeypatch):
         """The fallback exists so an unreachable pricing endpoint cannot fail a benchmark.
-        This constructs the client for real and lets it fail, which is the path a user hits."""
+
+        The failure is injected rather than produced by really having no network. An
+        earlier version of this test called from_aws with no client and let it fail for
+        real, which passed everywhere and made coverage depend on the environment: if
+        boto3.client itself raised, the get_products call was never reached and those
+        lines went uncovered, so the same suite reported 100 percent on a machine with
+        network and 99 without. A clean clone verified offline is what surfaced it.
+        """
+        import boto3
+
+        def no_client(*args, **kwargs):
+            raise RuntimeError("endpoint unreachable")
+
+        monkeypatch.setattr(boto3, "client", no_client)
         price = pricing.from_aws("c7i.large")
-        assert price.source in {"snapshot", "aws-price-list"}
+        assert price.source == "snapshot"
+
+    def test_a_client_that_cannot_be_constructed_can_also_refuse_to_fall_back(
+        self, monkeypatch
+    ):
+        import boto3
+
+        def no_client(*args, **kwargs):
+            raise RuntimeError("endpoint unreachable")
+
+        monkeypatch.setattr(boto3, "client", no_client)
+        with pytest.raises(pricing.PricingError, match="could not price"):
+            pricing.from_aws("c7i.large", fall_back=False)
